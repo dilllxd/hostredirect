@@ -28,7 +28,7 @@ var Plugin = proxy.Plugin{
 		// Initialize Viper configuration
 		viper.SetConfigName("mapping")
 		viper.SetConfigType("yaml")
-		viper.AddConfigPath("./plugins/hostredirect/")
+		viper.AddConfigPath("./")
 
 		// Set default values
 		viper.SetDefault("serverMappings", map[string]string{
@@ -40,7 +40,7 @@ var Plugin = proxy.Plugin{
 		if err := viper.ReadInConfig(); err != nil {
 			// Create a config file if it doesn't exist
 			log.Info("Couldn't find mapping.yml, creating a new config file")
-			err = viper.WriteConfigAs("./plugins/hostredirect/mapping.yml")
+			err = viper.WriteConfigAs("./mapping.yml")
 			if err != nil {
 				return fmt.Errorf("error creating config file: %w", err)
 			}

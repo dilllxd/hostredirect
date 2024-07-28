@@ -75,7 +75,6 @@ func onPlayerChooseInitialServer(p *proxy.Proxy, log logr.Logger, serverMappings
 		if !ok {
 			msg := fmt.Sprintf("No server mapping for host: %s", host)
 			log.Info(msg)
-			e.Player().Disconnect(&component.Text{Content: msg})
 			return
 		}
 

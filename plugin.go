@@ -1,7 +1,7 @@
-package gate-hostredirect
+package hostredirect
 
 import (
-	"github.com/dilllxd/gate-hostredirect/internal/plugin"
+	"github.com/dilllxd/hostredirect/internal/plugin"
 	"go.minekube.com/gate/pkg/edition/java/proxy"
 )
 

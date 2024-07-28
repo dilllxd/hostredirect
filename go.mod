@@ -1,4 +1,4 @@
-module github.com/dilllxd/gate-hostredirect
+module github.com/dilllxd/hostredirect
 
 go 1.22.0
 

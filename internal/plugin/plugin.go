@@ -1,4 +1,4 @@
-package hostredirect
+package plugin
 
 import (
 	"context"

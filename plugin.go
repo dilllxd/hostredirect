@@ -3,12 +3,12 @@ package hostredirect
 import (
 	"context"
 	"fmt"
-	"strings"
 
 	"github.com/go-logr/logr"
 	"github.com/robinbraemer/event"
 	"github.com/spf13/viper"
 	"go.minekube.com/common/minecraft/component"
+	"go.minekube.com/gate/pkg/edition/java/lite"
 	"go.minekube.com/gate/pkg/edition/java/proxy"
 )
 
@@ -68,7 +68,7 @@ func onPlayerChooseInitialServer(p *proxy.Proxy, log logr.Logger, serverMappings
 		// Get the player's connecting host.
 		conn := e.Player().VirtualHost()
 		host := conn.String()
-		host = strings.Split(host, ":")[0]
+		host = lite.ClearVirtualHost(host)
 
 		// Check if we have a server mapping for this host.
 		serverName, ok := serverMappings[host]
